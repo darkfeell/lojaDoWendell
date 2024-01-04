@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [Header("Others")]
     public Transform[] patrolPoints;
     public int destination;
+    public Animator anim;
     //public Transform deathPoint;
     public Rigidbody2D rig;
     [Header("Booleans")]
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
     }
 
@@ -42,7 +44,8 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Death()
     {
-        yield return new WaitForSeconds(2);
+        anim.SetBool("Dead", true);
+        yield return new WaitForSeconds(0.50f);        
         rig.gravityScale = 1;
         yield return new WaitForSeconds(6);
         Destroy(gameObject);
@@ -88,6 +91,14 @@ public class Enemy : MonoBehaviour
             {
                 destination = 5;
             }
+        }
+        if (patrolPoints[destination].transform.position.x < transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
 }
