@@ -135,7 +135,6 @@ MonoBehaviour:
   destination: 0
   anim: {fileID: 0}
   shot: {fileID: 1202001275363690342}
-  falling: {fileID: 1202001275363690342}
   rig: {fileID: 6606196674741398397}
   isDead: 0
 --- !u!50 &6606196674741398397
@@ -191,7 +190,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 633d553bc3c7d904085a2b2d6f12765a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.555
   m_Pitch: 1
   Loop: 0
   Mute: 0
