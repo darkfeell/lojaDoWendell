@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Death()
     {
+        GameController.instance.updateScore();
         anim.SetBool("Dead", true);
         yield return new WaitForSeconds(0.50f);        
         rig.gravityScale = 1;
