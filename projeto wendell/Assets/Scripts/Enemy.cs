@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public Transform[] patrolPoints;
     public int destination;
     public Animator anim;
+    public AudioSource shot;
+    //public AudioSource falling;
     //public Transform deathPoint;
     public Rigidbody2D rig;
     [Header("Booleans")]
@@ -21,6 +23,8 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
+        shot = GetComponent<AudioSource>();
+        //falling = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,7 +39,7 @@ public class Enemy : MonoBehaviour
     {
         movSpeed = 0;
         isDead = true;
-
+        shot.Play();
         if (isDead)
         {
             StartCoroutine(Death());
@@ -48,6 +52,7 @@ public class Enemy : MonoBehaviour
         anim.SetBool("Dead", true);
         yield return new WaitForSeconds(0.50f);        
         rig.gravityScale = 1;
+        //falling.Play();
         yield return new WaitForSeconds(6);
         Destroy(gameObject);
     }
