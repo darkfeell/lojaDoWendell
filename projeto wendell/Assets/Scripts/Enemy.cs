@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Variables")]
     public float movSpeed;
+    public int waitFor;
     //public float fallSpeed;
     [Header("Others")]
     public Transform[] patrolPoints;
@@ -31,7 +32,6 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         MoveBetweenPoints();
-
 
     }
 
