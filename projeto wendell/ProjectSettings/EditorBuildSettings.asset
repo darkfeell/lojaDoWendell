@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Raphael/Cutscene.unity
+    guid: 89ad343d1906a1c4e80024cb718a3a64
+  - enabled: 1
+    path: Assets/Scenes/Raphael/TestSceneRaphael.unity
+    guid: 07e8e32e9c1737d43bba0dd23eb2ebe8
   m_configObjects: {}
